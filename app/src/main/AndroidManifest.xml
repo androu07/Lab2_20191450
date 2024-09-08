@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityGame5"
+            android:parentActivityName=".MainActivity"
+            >
+        </activity>
+        <activity android:name=".StatsActivity"
+            android:parentActivityName=".ActivityGame5"/>
     </application>
 
 </manifest>
