@@ -2,6 +2,8 @@ package com.example.lab2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,15 +20,27 @@ public class StatsActivity extends AppCompatActivity{
         setContentView(R.layout.activity_stats);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);  // Configura el Toolbar como la ActionBar de la actividad
+        setSupportActionBar(toolbar);
 
-        // Habilita la flecha de retroceso
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // Muestra la flecha de retroceso
-            getSupportActionBar().setHomeButtonEnabled(true); // Habilita el botón de retroceso
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
         }
 
-        // Configura la acción para el ícono de navegación
         toolbar.setNavigationOnClickListener(v -> finish());
+
+        Button botonRecara = findViewById(R.id.buttonRecarga);
+        botonRecara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recargarActivity(v);
+            }
+        });
+    }
+
+    public void recargarActivity(View view) {
+        finish();
+        Intent intent = new Intent(this, ActivityGame5.class);
+        startActivity(intent);
     }
 }
